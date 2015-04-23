@@ -64,6 +64,17 @@ a
 // common blocks     
 .wrapper
 	overflow: hidden
+	
+.l
+	+clr
+
+.column
+	float: left
+	width: 50%
+
+.center
+	width: 1400px
+	margin: 0 auto
  
 .header
 	height: 50px
@@ -203,13 +214,10 @@ a
 	.time__month
 		position: absolute
 		top: 83px
+		padding: 0 10px
 		text-align: center
 		text-transform: uppercase
-	.time__month_left,
-	.time__month_right
-		padding: 0 10px
 		line-height: 16px
-		font-size: 12px
 	.time__month_left
 		left: 0
 	.time__month_right
@@ -218,12 +226,11 @@ a
 		left: 50%
 		width: 100px
 		margin-left: -50px
-		button
-			padding: 1px 10px
+		span
+			display: inline-block
 			background: #000
-			text-transform: uppercase
-			font-size: 12px
 			color: #FFF 
+			vertical-align: top
 	.time__day
 		display: inline-block
 		position: relative
@@ -310,9 +317,76 @@ a
 		img
 			+gray
 		
-
-
-
+.article
+	position: relative
+	padding: 100px 90px 150px 120px
+	.article__info
+		position: relative
+	.article__info_down
+		padding-top: 40px
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			width: 60px
+			height: 1px
+			background: #000 
+		.article__title
+			margin-bottom: 5px
+			font-size: 14px
+		.article__place
+			font-size: 10px 
+		.article__prev,
+		.article__next
+			top: 25px
+	.article__prev,
+	.article__next
+		position: absolute
+		top: 0
+		padding: 15px 20px
+		.icon
+			font-size: 15px
+			color: #CCC  
+	.article__prev
+		left: -120px
+	.article__next
+		right: -90px
+	.article__close
+		position: absolute
+		top: 0
+		right: 0
+		padding: 20px
+		font-size: 0
+		.icon
+			font-size: 15px
+	.article__title
+		margin-bottom: 10px
+		font-size: 24px 
+		font-weight: 800 
+	.article__place
+		margin-bottom: 55px
+		font-size: 12px
+		text-transform: uppercase
+	.article__month
+		display: inline-block
+		margin: 0 0 55px -10px
+		padding: 0 10px
+		background: #000
+		text-transform: uppercase
+		color: #FFF 
+		vertical-align: top
+		line-height: 18px
+	.article__content
+		margin-bottom: 100px
+		font-size: 14px
+		line-height: 1.8
+		p, blockquote
+			margin-bottom: 25px
+		blockquote
+			margin-left: -25px
+			font-size: 18px
+			font-style: italic
 
 
 
