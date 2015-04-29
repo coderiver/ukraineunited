@@ -76,7 +76,48 @@ a
 	width: 1400px
 	margin: 0 auto
  
+.main
+	height: 100vh
+	background: #FFF 
+	.main__top	
+		position: relative
+		height: 50vh
+		overflow: hidden
+		z-index: 2
+		&:after
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background: rgba(#525252,.75)
+	.main__pictures
+		position: absolute
+		left: -100px
+		right: -100px
+		bottom: 0
+	.main__list
+		white-space: nowrap
+		font-size: 0
+		text-align: center
+	.main__in
+		position: relative
+		margin-top: -73px
+		z-index: 4 
+	.main__logo
+		margin-bottom: 25px
+		font-size: 0
+		text-align: center
+	.main__text
+		width: 460px
+		margin: 0 auto
+		+transform(translateX(40px))
+		font-size: 13px
+		line-height: 1.5
+
 .header
+	position: relative
 	height: 50px
 	padding: 0 20px
 	background: #333 
