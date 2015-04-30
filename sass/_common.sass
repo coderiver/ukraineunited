@@ -78,6 +78,7 @@ a
 	margin: 0 auto
  
 .main
+	display: none
 	height: 100vh
 	background: #FFF 
 	.main__top	
@@ -502,11 +503,129 @@ a
 			font-size: 18px
 			font-style: italic
 
+.cities
+	padding: 50px 0 15px
+	background: #333 
+	white-space: nowrap
+	font-size: 0
+	text-align: center
+	li
+		display: inline-block
+		margin: 0 3px
+		vertical-align: top
+		&.is-active
+			a
+				border-color: #6e6e6e
+	a
+		display: block
+		padding: 2px 9px
+		border: 1px solid transparent
+		color: #6e6e6e 
+		font-size: 12px
+		text-transform: uppercase
 
+.text
+	height: 150px
+	white-space: nowrap
+	font-size: 0
+	.text__item	
+		display: inline-block
+		width: 80px
+		padding: 70px 15px 0
+		white-space: normal
+		vertical-align: top
+		font-size: 2px
 
+.list
+	position: absolute
+	left: 0
+	right: 0
+	bottom: 0
+	height: 270px
+	padding: 50px 0
+	border-bottom: 100px solid #333
+	white-space: nowrap
+	font-size: 0
+	text-align: center
+	.list__item
+		display: inline-block
+		width: 28px
+		vertical-align: top
+		text-align: left
+		opacity: .7 
+		&.is-active
+			opacity: 1 
+			.list__info
+				visibility: visible
+	.list__info
+		visibility: hidden
+	.list__man
+		margin-bottom: 3px
+		font-size: 10px
+		font-weight: 700
+	.list__place
+		margin-bottom: 12px
+		font-size: 8px 
 
-
-
+.full
+	position: absolute
+	top: 236px 
+	left: 0
+	right: 0
+	bottom: 270px
+	+vertical 
+	.full__in
+		display: inline-block
+		height: 85px
+		padding-top: 34px
+		white-space: nowrap
+		vertical-align: middle
+	.full__month,
+	.full__day
+		position: relative
+		display: inline-block
+		vertical-align: top
+	.full__day
+		width: 9px
+		height: 51px
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			top: 0
+			left: 4px
+			width: 1px
+			height: 4px
+			background: #cccccc
+		&.is-interview
+			&:after
+				top: auto
+				bottom: 0
+	.full__title
+		position: absolute
+		bottom: 16px
+		left: 50%
+		width: 100px
+		margin-left: -50px
+		span
+			display: inline-block
+			padding: 0 10px
+			border: 1px solid transparent
+			text-transform: uppercase
+			font-size: 10px
+			vertical-align: top
+			line-height: 16px
+		&.is-active
+			span
+				border-color: #000
+	.full__pic
+		position: absolute
+		top: -34px
+		left: -46px
+		width: 101px
+		text-align: center
+		font-size: 0
+		
 
 
 
