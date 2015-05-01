@@ -93,4 +93,32 @@ head.ready(function() {
 		});
 	}());
 
+
+
+	
+
+	if($('body').hasClass('articlebody')){
+		var num = $('.articlepic').length;
+		function getcurrent(){
+			bh = $('.wrapper').height();
+
+			wh = $(window).height();
+			 
+			st = $(window).scrollTop();
+			
+			space = bh - wh;
+
+			step = space/num;
+
+			stepsdone = (st - 10)/step;
+			slidetoshow = Math.abs(parseInt(stepsdone));
+			$('.cycle-slideshow').cycle('goto', slidetoshow);
+		}
+		
+		
+		$(window).scroll(function(event) {
+			getcurrent();
+		});
+		getcurrent();
+	}
 });

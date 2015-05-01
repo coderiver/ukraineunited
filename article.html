@@ -6,7 +6,7 @@
 	<link rel="stylesheet" media="all" href="css/screen.css">
 	<link rel="stylesheet" media="all" href="css/style.css">
 </head>
-<body>
+<body class="articlebody">
 <!-- wrapper -->
 <div class="wrapper">
 	<!-- header -->
@@ -31,7 +31,20 @@
 		</a>
 	</header>
 	<!-- l -->
-	<div class="center l">
+	<div class="center l articlewrapper" >
+		<div class="column">
+			<!-- pic -->
+			<div class="articlepics cycle-slideshow" 
+			    data-cycle-timeout="0"
+			    data-cycle-slides="> div">
+				<div class="articlepic" style="
+				background-image: url(http://placehold.it/800x800);"></div>
+				<div class="articlepic" style="
+				background-image: url(http://placehold.it/900x900);"></div>
+				<div class="articlepic" style="
+				background-image: url(http://placehold.it/960x960);"></div>
+			</div>
+		</div>
 		<div class="column">
 			<!-- article -->
 			<div class="article">
@@ -72,12 +85,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="column">
-			<!-- pic -->
-			<div class="pic">
-				<img src="http://placehold.it/700x700" alt="">
-			</div>
-		</div>
+		
 	</div>
 </div>
 <!-- load scripts -->
