@@ -82,7 +82,8 @@ a { text-decoration: none; }
 .search .search__btn:hover { background: #3e3e3e; color: white; }
 .search .icon { font-size: 12px; }
 
-.container { position: relative; height: calc(100vh - 50px); min-height: 768px; }
+.container { position: relative; height: calc(100vh - 50px); min-height: 718px; }
+.container .container__upper { position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0; visibility: hidden; }
 
 .events { position: absolute; top: 0; left: 0; right: 0; height: 33%; padding-left: 50%; white-space: nowrap; font-size: 0; overflow: hidden; }
 .events .events__in { margin-left: -200px; -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); -o-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); -webkit-transition: -webkit-transform 0.3s; -moz-transition: -moz-transform 0.3s; -o-transition: -o-transform 0.3s; transition: transform 0.3s; }
@@ -165,25 +166,26 @@ a { text-decoration: none; }
 .cities li.is-active a { border-color: #6e6e6e; }
 .cities a { display: block; padding: 2px 9px; border: 1px solid transparent; color: #6e6e6e; font-size: 12px; text-transform: uppercase; }
 
-.text { height: 150px; white-space: nowrap; font-size: 0; }
+.text { height: 150px; }
+.text .text__list { white-space: nowrap; font-size: 0; }
 .text .text__item { display: inline-block; width: 80px; padding: 70px 15px 0; white-space: normal; vertical-align: top; font-size: 2px; }
 
 .list { position: absolute; left: 0; right: 0; bottom: 0; height: 270px; padding: 50px 0; border-bottom: 100px solid #333333; white-space: nowrap; font-size: 0; text-align: center; }
-.list .list__item { display: inline-block; width: 28px; vertical-align: top; text-align: left; opacity: 0.7; }
-.list .list__item.is-active { opacity: 1; }
-.list .list__item.is-active .list__info { visibility: visible; }
+.list .list__item { display: inline-block; width: 28px; vertical-align: top; text-align: left; opacity: 0.7; color: black; }
+.list .list__item:hover { opacity: 1; }
+.list .list__item:hover .list__info { visibility: visible; }
 .list .list__info { visibility: hidden; }
 .list .list__man { margin-bottom: 3px; font-size: 10px; font-weight: 700; }
 .list .list__place { margin-bottom: 12px; font-size: 8px; }
 
 .full { position: absolute; top: 236px; left: 0; right: 0; bottom: 270px; text-align: center; font-size: 0; }
 .full:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
-.full .full__in { display: inline-block; height: 85px; padding-top: 34px; white-space: nowrap; vertical-align: middle; }
+.full .full__in { display: inline-block; width: 100%; height: 85px; padding-top: 34px; white-space: nowrap; vertical-align: middle; }
 .full .full__month, .full .full__day { position: relative; display: inline-block; vertical-align: top; }
 .full .full__day { width: 9px; height: 51px; }
 .full .full__day:before, .full .full__day:after { content: ""; position: absolute; top: 0; left: 4px; width: 1px; height: 4px; background: #cccccc; }
 .full .full__day.is-interview:after { top: auto; bottom: 0; }
-.full .full__title { position: absolute; bottom: 16px; left: 50%; width: 100px; margin-left: -50px; }
-.full .full__title span { display: inline-block; padding: 0 10px; border: 1px solid transparent; text-transform: uppercase; font-size: 10px; vertical-align: top; line-height: 16px; }
-.full .full__title.is-active span { border-color: black; }
+.full .full__title { position: absolute; bottom: 17px; left: 50%; width: 100px; margin-left: -50px; }
+.full .full__title a { display: inline-block; padding: 0 10px; border: 1px solid transparent; text-transform: uppercase; font-size: 10px; vertical-align: top; line-height: 16px; color: black; }
+.full .full__title a:hover { border-color: black; }
 .full .full__pic { position: absolute; top: -34px; left: -46px; width: 101px; text-align: center; font-size: 0; }
