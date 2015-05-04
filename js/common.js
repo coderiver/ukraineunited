@@ -15,7 +15,9 @@ head.ready(function() {
 			previewWidth = 164,
 			counter = 0,
 			counterPreview = 0,
-			month = $('.js-month')
+			month = $('.js-month'),
+			fullMonth = $('.js-full-month'),
+			container = $('.js-container');
 		// next
 		btnNext.on('click', function () {
 			// time
@@ -91,12 +93,13 @@ head.ready(function() {
 			};
 			return false;
 		});
+		fullMonth.on('click', function () {
+			container.addClass('is-upper-show');
+			return false;
+		});
 	}());
 
-
-
-	
-
+	// article
 	if($('body').hasClass('articlebody')){
 		var num = $('.articlepic').length;
 		function getcurrent(){

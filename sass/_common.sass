@@ -241,8 +241,13 @@ a
 	position: relative
 	&.is-upper-show
 		.container__upper
+			+transition-delay(.4s)
 			opacity: 1
 			visibility: visible
+		.container__under
+			+transition-delay(.2s)
+			opacity: 0
+			visibility: hidden 
 		.cities
 			height: 0
 		.text
@@ -259,6 +264,7 @@ a
 	.container__upper
 		height: calc(100vh - 50px)
 		min-height: 718px
+		+transition(all .4s)
 	.container__under
 
 	.container__upper
@@ -578,6 +584,7 @@ a
 
 .cities
 	height: 86px
+	+tr(height .4s)
 	overflow: hidden
 	.cities__list
 		padding: 50px 0 15px
@@ -603,6 +610,7 @@ a
 .text
 	position: relative
 	height: 150px
+	+tr(transform .4s)
 	.text__list
 		position: absolute
 		top: 0
@@ -626,6 +634,7 @@ a
 	bottom: 0
 	height: 274px
 	border-bottom: 100px solid #333
+	+tr(border-width .4s)
 	.list__in
 		position: absolute
 		left: 0
@@ -634,6 +643,7 @@ a
 		white-space: nowrap
 		font-size: 0
 		text-align: center
+		+tr(bottom .4s)
 	.list__item
 		display: inline-block
 		width: 28px
@@ -641,7 +651,7 @@ a
 		text-align: left
 		opacity: .7
 		color: #000  
-		+tr(opacity .2s)
+		+transition(opacity .4s, width .4s)
 		&:hover
 			opacity: 1 
 			.list__info
@@ -668,6 +678,7 @@ a
 	left: 0
 	right: 0
 	bottom: 274px
+	+tr(top .4s)
 	+vertical 
 	.full__in
 		display: inline-block
