@@ -64,7 +64,6 @@ a
 
 // common blocks     
 .wrapper
-	overflow: hidden
 	
 .l
 	+clr
@@ -80,9 +79,12 @@ a
 	max-width: 1400px
 	margin: 0 auto
  
+.in
+
 .main
-	height: 100vh
+	position: relative
 	background: #FFF 
+	z-index: 2 
 	.main__top	
 		position: relative
 		height: 50vh
@@ -238,6 +240,8 @@ a
 
 .container
 	position: relative
+	background: #FFF 
+	overflow: hidden
 	&.is-upper-show
 		.container__upper
 			+transition-delay(.8s)

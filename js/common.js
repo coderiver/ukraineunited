@@ -31,9 +31,9 @@ head.ready(function() {
 				timeAct.removeClass('is-active');
 				timeNext.addClass('is-active');
 				counter = timeNext.prevAll().length;
-				timeList.css('-webkit-transform', 'translate3d('+ -counter*timeWidth +'px,0,0)');
+				timeList.css('transform', 'translate3d('+ -counter*timeWidth +'px,0,0)');
 				// events
-				events.css('-webkit-transform', 'translate3d('+ -counter*eventsWidth +'px,0,0)');
+				events.css('transform', 'translate3d('+ -counter*eventsWidth +'px,0,0)');
 				// preview
 				if (timeNext.hasClass('is-interview')) {
 					var previewAct = preview.find('.js-preview-item.is-active'),
@@ -41,7 +41,7 @@ head.ready(function() {
 					previewItem.removeClass('is-active');
 					previewActNext.addClass('is-active');
 					counterPreview = previewActNext.prevAll().length;
-					preview.css('-webkit-transform', 'translate3d('+ -counterPreview*previewWidth +'px,0,0)');
+					preview.css('transform', 'translate3d('+ -counterPreview*previewWidth +'px,0,0)');
 				};
 				// month
 				if (timeNext.data('month') == 'next') {
@@ -77,9 +77,9 @@ head.ready(function() {
 				timeAct.removeClass('is-active');
 				timePrev.addClass('is-active');
 				counter = timePrev.prevAll().length;
-				timeList.css('-webkit-transform', 'translate3d('+ -counter*timeWidth +'px,0,0)');
+				timeList.css('transform', 'translate3d('+ -counter*timeWidth +'px,0,0)');
 				// events
-				events.css('-webkit-transform', 'translate3d('+ -counter*eventsWidth +'px,0,0)');
+				events.css('transform', 'translate3d('+ -counter*eventsWidth +'px,0,0)');
 				// preview
 				if (timePrev.hasClass('is-interview')) {
 					var previewAct = preview.find('.js-preview-item.is-active'),
@@ -87,7 +87,7 @@ head.ready(function() {
 					previewItem.removeClass('is-active');
 					previewActNext.addClass('is-active');
 					counterPreview = previewActNext.prevAll().length;
-					preview.css('-webkit-transform', 'translate3d('+ -counterPreview*previewWidth +'px,0,0)');
+					preview.css('transform', 'translate3d('+ -counterPreview*previewWidth +'px,0,0)');
 				};
 				// month
 				if (timePrev.data('month') == 'prev') {
@@ -116,9 +116,9 @@ head.ready(function() {
 			return false;
 		});
 	}());
-
+	
 	// article
-	if ($('body').hasClass('articlebody')){
+	if ($('body').hasClass('is-article-page')) {
 		var num = $('.articlepic').length;
 		function getcurrent(){
 			bh = $('.wrapper').height();

@@ -32,8 +32,6 @@ button { background: none; font-family: "Open Sans", Arial, sans-serif; font-siz
 
 a { text-decoration: none; }
 
-.wrapper { overflow: hidden; }
-
 .l { *zoom: 1; }
 .l:after { content: " "; display: table; clear: both; }
 
@@ -42,7 +40,7 @@ a { text-decoration: none; }
 
 .center { max-width: 1400px; margin: 0 auto; }
 
-.main { height: 100vh; background: white; }
+.main { position: relative; background: white; z-index: 2; }
 .main .main__top { position: relative; height: 50vh; overflow: hidden; z-index: 2; }
 .main .main__top:after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(82, 82, 82, 0.75); }
 .main .main__pictures { position: absolute; left: -100px; right: -100px; bottom: 0; }
@@ -82,7 +80,7 @@ a { text-decoration: none; }
 .search .search__btn:hover { background: #3e3e3e; color: white; }
 .search .icon { font-size: 12px; }
 
-.container { position: relative; }
+.container { position: relative; background: white; overflow: hidden; }
 .container.is-upper-show .container__upper { -webkit-transition-delay: 0.8s; -moz-transition-delay: 0.8s; -o-transition-delay: 0.8s; transition-delay: 0.8s; opacity: 1; visibility: visible; }
 .container.is-upper-show .container__under { -webkit-transition-delay: 0.6s; -moz-transition-delay: 0.6s; -o-transition-delay: 0.6s; transition-delay: 0.6s; opacity: 0; visibility: hidden; }
 .container.is-upper-show .cities { height: 0; }
