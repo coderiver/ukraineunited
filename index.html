@@ -6,7 +6,7 @@
 	<link rel="stylesheet" media="all" href="css/screen.css">
 	<link rel="stylesheet" media="all" href="css/style.css">
 </head>
-<body>
+<body class="is-main-page">
 <!-- wrapper -->
 <div class="wrapper">
 	<!-- main -->
@@ -134,7 +134,7 @@
 				<div class="main__text">This project serve creation of a nationwide and international dialogue<br>as a path to stop the violence in Ukraine by encouraging people to think<br>for themselves instead of consuming propaganda and inspiring communication and deeper understanding of various viewpoints.</div>
 			</div>
 			<!-- letsgo -->
-			<div class="letsgo">
+			<div class="letsgo js-letsgo">
 				<i class="icon icon-arr-down"></i>
 				<i class="icon icon-mouse"></i>
 				<span>scroll<br>to navigate</span>
@@ -155,7 +155,7 @@
 				</button>
 			</div>
 			<!-- menu -->
-			<button class="menu">
+			<button class="menu js-scale">
 				<span>scale</span>
 				<i class="icon icon-menu"></i>
 			</button>
@@ -171,25 +171,25 @@
 				<div class="cities-text">
 					<!-- cities -->
 					<div class="cities">
-						<ul class="cities__list">
-							<li><a href="#">Мариуполь</a></li>
-							<li><a href="#">Киев</a></li>
-							<li><a href="#">Славянск</a></li>
-							<li><a href="#">Севастополь</a></li>
-							<li><a href="#">Луганск</a></li>
-							<li><a href="#">Донецк</a></li>
-							<li><a href="#">Илловайск</a></li>
-							<li><a href="#">Днепропетровск</a></li>
-							<li><a href="#">Одесса</a></li>
-							<li><a href="#">Львов</a></li>
-							<li><a href="#">Феодосия</a></li>
-							<li><a href="#">Луцк</a></li>
-							<li><a href="#">Кривой рог</a></li>
-							<li><a href="#">Запорожье</a></li>
-							<li><a href="#">Счастье</a></li>
-							<li><a href="#">Николаев</a></li>
-							<li><a href="#">Коктебель</a></li> 
-						</ul>                                                     
+						<div class="cities__list js-cities">
+							<label><input type="radio" name="city"><span>Мариуполь</span></label>
+							<label><input type="radio" name="city"><span>Киев</span></label>
+							<label><input type="radio" name="city"><span>Славянск</span></label>
+							<label><input type="radio" name="city"><span>Севастополь</span></label>
+							<label><input type="radio" name="city"><span>Луганск</span></label>
+							<label><input type="radio" name="city"><span>Донецк</span></label>
+							<label><input type="radio" name="city"><span>Илловайск</span></label>
+							<label><input type="radio" name="city"><span>Днепропетровск</span></label>
+							<label><input type="radio" name="city"><span>Одесса</span></label>
+							<label><input type="radio" name="city"><span>Львов</span></label>
+							<label><input type="radio" name="city"><span>Феодосия</span></label>
+							<label><input type="radio" name="city"><span>Луцк</span></label>
+							<label><input type="radio" name="city"><span>Кривой рог</span></label>
+							<label><input type="radio" name="city"><span>Запорожье</span></label>
+							<label><input type="radio" name="city"><span>Счастье</span></label>
+							<label><input type="radio" name="city"><span>Николаев</span></label>
+							<label><input type="radio" name="city"><span>Коктебель</span></label>
+						</div>                                                     
 					</div>
 					<!-- text -->
 					<div class="text">
@@ -771,10 +771,10 @@
 				<!-- events -->
 				<div class="events">
 					<!-- prev & next -->
-					<button class="prev js-prev is-disabled">Назад</button>
-					<button class="next js-next">Вперед</button>
+					<div class="prev js-prev is-disabled"><span>Назад</span></div>
+					<div class="next js-next"><span>Вперед</span></div>
 					<div class="events__in js-events">
-						<div class="events__item">
+						<div class="events__item is-active">
 							<div class="events__day">8 марта</div>
 							<div class="events__text">Уряд України вирішив призупинити процес підготовки до підписання угоди про асоціацію України та ЄС. Угода мала бути підписана 28 листопада на саміті  «Східного партнерства» у Вільнюсі.</div>
 						</div>

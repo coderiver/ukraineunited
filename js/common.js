@@ -3,6 +3,7 @@ head.ready(function() {
 	// main page
 	(function () {
 		var events = $('.js-events'),
+			eventsItem = events.find('>div'),
 			eventsWidth = 400,
 			time = $('.js-time'),
 			timeList = time.find('.js-time-list'),
@@ -17,7 +18,8 @@ head.ready(function() {
 			counterPreview = 0,
 			month = $('.js-month'),
 			fullMonth = $('.js-full-month'),
-			container = $('.js-container');
+			container = $('.js-container'),
+			scale = $('.js-scale');
 		// next
 		btnNext.on('click', function () {
 			if (btnPrev.hasClass('is-disabled')) {
@@ -31,6 +33,8 @@ head.ready(function() {
 				timeAct.removeClass('is-active');
 				timeNext.addClass('is-active');
 				counter = timeNext.prevAll().length;
+				eventsItem.removeClass('is-active');
+				eventsItem.eq(counter).addClass('is-active');
 				timeList.css('transform', 'translate3d('+ -counter*timeWidth +'px,0,0)');
 				// events
 				events.css('transform', 'translate3d('+ -counter*eventsWidth +'px,0,0)');
@@ -77,6 +81,8 @@ head.ready(function() {
 				timeAct.removeClass('is-active');
 				timePrev.addClass('is-active');
 				counter = timePrev.prevAll().length;
+				eventsItem.removeClass('is-active');
+				eventsItem.eq(counter).addClass('is-active');
 				timeList.css('transform', 'translate3d('+ -counter*timeWidth +'px,0,0)');
 				// events
 				events.css('transform', 'translate3d('+ -counter*eventsWidth +'px,0,0)');
@@ -114,6 +120,34 @@ head.ready(function() {
 		fullMonth.on('click', function () {
 			container.addClass('is-upper-show');
 			return false;
+		});
+		scale.on('click', function () {
+			container.removeClass('is-upper-show');
+			return false;
+		});
+	}());
+
+	// letsgo
+	(function () {
+		var letsgo = $('.js-letsgo'),
+			wh = $(window).height();
+		letsgo.on('click', function () {
+			$('body').animate({
+				scrollTop: wh
+			}, 700);
+		});
+		var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
+		$(window).bind(mousewheelevt, function(e){
+		    var evt = window.event || e //equalize event object     
+		    evt = evt.originalEvent ? evt.originalEvent : evt; //convert to originalEvent if possible               
+		    var delta = evt.detail ? evt.detail*(-40) : evt.wheelDelta //check for detail first, because it is used by Opera and FF
+		    if(delta > 0) {
+		        //scroll up
+		    }
+		    else{
+		        //scroll down
+		        letsgo.trigger('click');
+		    }   
 		});
 	}());
 	
