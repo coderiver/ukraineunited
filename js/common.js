@@ -17,6 +17,7 @@ head.ready(function() {
 			counter = 0,
 			counterPreview = 0,
 			month = $('.js-month'),
+			monthItem = $('.js-month > li'),
 			fullMonth = $('.js-full-month'),
 			container = $('.js-container'),
 			scale = $('.js-scale');
@@ -44,6 +45,7 @@ head.ready(function() {
 						previewActNext = previewAct.next();
 					previewItem.removeClass('is-active');
 					previewActNext.addClass('is-active');
+					previewActNext.prevAll().addClass('is-prev');
 					counterPreview = previewActNext.prevAll().length;
 					preview.css('transform', 'translate3d('+ -counterPreview*previewWidth +'px,0,0)');
 				};
@@ -117,6 +119,102 @@ head.ready(function() {
 			}
 			return false;
 		});
+		// 
+		previewItem.on('click', function () {
+			var thisEl = $(this),
+				attr = $(this).data('day');
+				attrEl = $('.' + attr),
+				attrIndex = attrEl.index(),
+				commonCounter = attrEl.prevAll().length,
+				previewItemCounter = thisEl.prevAll().length;
+			previewItem.removeClass('is-active');
+			thisEl.addClass('is-active');
+
+			previewItem.removeClass('is-prev');
+			attrEl.prevAll().addClass('is-prev');
+
+			timeDay.removeClass('is-active');
+			timeDay.eq(attrIndex).addClass('is-active');
+
+			eventsItem.removeClass('is-active');
+			eventsItem.eq(attrIndex).addClass('is-active');
+
+			if (thisEl.hasClass('is-prev')) {
+				preview.css('transform', 'translate3d('+ previewItemCounter*previewWidth +'px,0,0)');
+				// 
+				timeList.css('transform', 'translate3d('+ commonCounter*timeWidth +'px,0,0)');
+				// events
+				events.css('transform', 'translate3d('+ commonCounter*eventsWidth +'px,0,0)');
+			}
+			else {
+				preview.css('transform', 'translate3d('+ -previewItemCounter*previewWidth +'px,0,0)');
+				// 
+				timeList.css('transform', 'translate3d('+ -commonCounter*timeWidth +'px,0,0)');
+				// events
+				events.css('transform', 'translate3d('+ -commonCounter*eventsWidth +'px,0,0)');
+			};
+			return false;
+		});
+		// 
+		monthItem.on('click', function () {
+			var thisEl = $(this),
+				attr = thisEl.data('day'),
+				attrEl = $('.' + attr),
+				attrIndex = attrEl.index(),
+				commonCounter = attrEl.prevAll().length;
+
+			timeDay.removeClass('is-active');
+			timeDay.eq(attrIndex).addClass('is-active');
+
+			eventsItem.removeClass('is-active');
+			eventsItem.eq(attrIndex).addClass('is-active');
+
+			if (thisEl.parent().hasClass('is-prev')) {
+				// 
+				timeList.css('transform', 'translate3d('+ commonCounter*timeWidth +'px,0,0)');
+				// events
+				events.css('transform', 'translate3d('+ commonCounter*eventsWidth +'px,0,0)');
+				// 
+				month.each(function () {
+					var thisEl = $(this),
+						item = thisEl.find('li'),
+						act = thisEl.find('.is-active'),
+						actPrev = act.prev();
+					act.removeClass('is-active');
+					if (actPrev.length) {
+						actPrev.addClass('is-active');
+					}
+					else {
+						item.last().addClass('is-active');
+					}
+				});
+				// 
+				if (attrEl.hasClass('is-interview')) {
+					
+				};
+			}
+			else {
+				// 
+				timeList.css('transform', 'translate3d('+ -commonCounter*timeWidth +'px,0,0)');
+				// events
+				events.css('transform', 'translate3d('+ -commonCounter*eventsWidth +'px,0,0)');
+				// 
+				month.each(function () {
+					var thisEl = $(this),
+						item = thisEl.find('li'),
+						act = thisEl.find('.is-active'),
+						actNext = act.next();
+					act.removeClass('is-active');
+					if (actNext.length) {
+						actNext.addClass('is-active');
+					}
+					else {
+						item.first().addClass('is-active');
+					}
+				});
+			};
+		});
+		// 
 		fullMonth.on('click', function () {
 			container.addClass('is-upper-show');
 			return false;
