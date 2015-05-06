@@ -26,6 +26,12 @@ head.ready(function() {
 			var index = el.index(),
 				dataPreview = el.data('preview'),
 				dataMonth = el.data('month');
+			if (index == 0) {
+				btnPrev.addClass('is-disabled');
+			}
+			else {
+				btnPrev.removeClass('is-disabled');
+			}
 			// month
 			month.each(function () {
 				var thisMonth = $(this),
@@ -71,21 +77,25 @@ head.ready(function() {
 		};
 		// next button click
 		btnNext.on('click', function () {
-			// time
-			var timeAct = time.find('.js-time-item.is-active'),
-				timeNext = timeAct.next();
-			// move
-			moveTo(timeNext);
-			return false;
+			if (!btnNext.hasClass('is-disabled')) {
+				// time
+				var timeAct = time.find('.js-time-item.is-active'),
+					timeNext = timeAct.next();
+				// move
+				moveTo(timeNext);
+				return false;
+			};
 		});
 		// prev button click
 		btnPrev.on('click', function () {
-			// time
-			var timeAct = time.find('.js-time-item.is-active'),
-				timePrev = timeAct.prev();
-			// move
-			moveTo(timePrev);
-			return false;
+			if (!btnPrev.hasClass('is-disabled')) {
+				// time
+				var timeAct = time.find('.js-time-item.is-active'),
+					timePrev = timeAct.prev();
+				// move
+				moveTo(timePrev);
+				return false;
+			};
 		});
 		// preview item click
 		previewItem.on('click', function () {
