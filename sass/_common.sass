@@ -266,6 +266,8 @@ a
 			bottom: 0
 		.list__item
 			width: 164px
+		.time__list
+			+tr(transform .3s)
 	.container__under,
 	.container__upper
 		height: calc(100vh - 50px)
@@ -373,15 +375,14 @@ a
 	.time__list
 		margin-left: -10px
 		+gpu
-		+tr(transform .3s)
 	.time__month
 		position: absolute
 		top: 81px
 		width: 100px
 		height: 20px
 		text-transform: uppercase
-		line-height: 16px
 		cursor: pointer
+		+nosel
 		z-index: 4 
 		li
 			position: absolute
@@ -389,12 +390,21 @@ a
 			left: 0
 			width: 100%
 			height: 100%
-			padding: 2px 10px
 			opacity: 0 
 			+tr(opacity .3s)
+			&:hover
+				span
+					background: #000
+					color: #FFF
 			&.is-active
 				opacity: 1 
-				z-index: 2 
+				z-index: 2
+		span
+			display: inline-block
+			padding: 0 10px
+			vertical-align: top
+			line-height: 20px
+			+tr(all .2s)
 		&.is-prev
 			left: 0
 		&.is-next
@@ -405,22 +415,15 @@ a
 			margin-left: -50px
 			text-align: center
 			cursor: default
-			li
-				padding: 0
-				span
-					display: inline-block
-					padding: 2px 10px
-					background: #000
-					color: #FFF
-					vertical-align: top
-	.time__day
+			span
+				background: #000
+				color: #FFF
+	.time__item
 		display: inline-block
 		position: relative
 		width: 19px
 		height: 170px
 		vertical-align: top
-		cursor: pointer
-		// &:hover,
 		&.is-active
 			&:before,
 			&:after
@@ -443,7 +446,7 @@ a
 		&:after
 			display: none
 			top: 114px 
-		&.is-interview
+		&[data-preview]
 			&:after
 				display: block
 
@@ -456,6 +459,7 @@ a
 	padding-left: 50%
 	font-size: 0
 	white-space: nowrap
+	+nosel
 	overflow: hidden
 	.preview__in
 		margin-left: -82px

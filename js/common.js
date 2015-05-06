@@ -7,216 +7,108 @@ head.ready(function() {
 			eventsWidth = 400,
 			time = $('.js-time'),
 			timeList = time.find('.js-time-list'),
+			timeItem = $('.js-time-item'),
+			timeWidth = 19,
 			btnNext = $('.js-next'),
 			btnPrev = $('.js-prev'),
-			timeDay = time.find('.js-time-day'),
-			timeWidth = 19,
 			preview = $('.js-preview'),
 			previewItem = preview.find('.js-preview-item'),
 			previewWidth = 164,
 			counter = 0,
 			counterPreview = 0,
 			month = $('.js-month'),
-			monthItem = $('.js-month > li'),
+			monthItem = month.find('li'),
 			fullMonth = $('.js-full-month'),
 			container = $('.js-container'),
 			scale = $('.js-scale');
-		// next
+		// move
+		function moveTo (el) {
+			var index = el.index(),
+				dataPreview = el.data('preview'),
+				dataMonth = el.data('month');
+			// month
+			month.each(function () {
+				var thisMonth = $(this),
+					thisMonthItem = thisMonth.find('li');
+				thisMonthItem.removeClass('is-active');
+				if (thisMonth.hasClass('is-prev')) {
+					var monthPrev = thisMonth.find('.' + dataMonth).prev();
+					if (monthPrev.length) {
+						monthPrev.addClass('is-active');
+					}
+					else {
+						thisMonthItem.last().addClass('is-active');
+					};
+				};
+				if (thisMonth.hasClass('is-center')) {
+					thisMonth.find('.' + dataMonth).addClass('is-active');
+				};
+				if (thisMonth.hasClass('is-next')) {
+					var monthNext = thisMonth.find('.' + dataMonth).next();
+					if (monthNext.length) {
+						monthNext.addClass('is-active');
+					}
+					else {
+						thisMonthItem.first().addClass('is-active');
+					};
+				};
+			});
+			// time
+			timeItem.removeClass('is-active');
+			timeItem.eq(index).addClass('is-active');
+			timeList.css('transform', 'translate3d('+ -index * timeWidth +'px,0,0)');
+			// events
+			eventsItem.removeClass('is-active');
+			eventsItem.eq(index).addClass('is-active');
+			events.css('transform', 'translate3d('+ -index * eventsWidth +'px,0,0)');
+			// preview
+			if (dataPreview != undefined) {
+				var indexPreview = $('.' + dataPreview).index();
+				previewItem.removeClass('is-active');
+				previewItem.eq(indexPreview).addClass('is-active');
+				preview.css('transform', 'translate3d('+ -indexPreview * previewWidth +'px,0,0)');
+			};
+		};
+		// next button click
 		btnNext.on('click', function () {
-			if (btnPrev.hasClass('is-disabled')) {
-				btnPrev.removeClass('is-disabled');
-			};
 			// time
-			var timeAct = time.find('.js-time-day.is-active'),
+			var timeAct = time.find('.js-time-item.is-active'),
 				timeNext = timeAct.next();
-			if (timeNext.length) {
-				// time
-				timeAct.removeClass('is-active');
-				timeNext.addClass('is-active');
-				counter = timeNext.prevAll().length;
-				eventsItem.removeClass('is-active');
-				eventsItem.eq(counter).addClass('is-active');
-				timeList.css('transform', 'translate3d('+ -counter*timeWidth +'px,0,0)');
-				// events
-				events.css('transform', 'translate3d('+ -counter*eventsWidth +'px,0,0)');
-				// preview
-				if (timeNext.hasClass('is-interview')) {
-					var previewAct = preview.find('.js-preview-item.is-active'),
-						previewActNext = previewAct.next();
-					previewItem.removeClass('is-active');
-					previewActNext.addClass('is-active');
-					previewActNext.prevAll().addClass('is-prev');
-					counterPreview = previewActNext.prevAll().length;
-					preview.css('transform', 'translate3d('+ -counterPreview*previewWidth +'px,0,0)');
-				};
-				// month
-				if (timeNext.data('month') == 'next') {
-					month.each(function () {
-						var thisEl = $(this),
-							item = thisEl.find('li'),
-							act = thisEl.find('.is-active'),
-							actNext = act.next();
-						act.removeClass('is-active');
-						if (actNext.length) {
-							actNext.addClass('is-active');
-						}
-						else {
-							item.first().addClass('is-active');
-						}
-					});
-				};
-			}
-			else {
-				btnNext.addClass('is-disabled');
-			}
+			// move
+			moveTo(timeNext);
 			return false;
 		});
+		// prev button click
 		btnPrev.on('click', function () {
-			if (btnNext.hasClass('is-disabled')) {
-				btnNext.removeClass('is-disabled');
-			};
 			// time
-			var timeAct = time.find('.js-time-day.is-active'),
+			var timeAct = time.find('.js-time-item.is-active'),
 				timePrev = timeAct.prev();
-			if (timePrev.length) {
-				// time
-				timeAct.removeClass('is-active');
-				timePrev.addClass('is-active');
-				counter = timePrev.prevAll().length;
-				eventsItem.removeClass('is-active');
-				eventsItem.eq(counter).addClass('is-active');
-				timeList.css('transform', 'translate3d('+ -counter*timeWidth +'px,0,0)');
-				// events
-				events.css('transform', 'translate3d('+ -counter*eventsWidth +'px,0,0)');
-				// preview
-				if (timePrev.hasClass('is-interview')) {
-					var previewAct = preview.find('.js-preview-item.is-active'),
-						previewActNext = previewAct.prev();
-					previewItem.removeClass('is-active');
-					previewActNext.addClass('is-active');
-					counterPreview = previewActNext.prevAll().length;
-					preview.css('transform', 'translate3d('+ -counterPreview*previewWidth +'px,0,0)');
-				};
-				// month
-				if (timePrev.data('month') == 'prev') {
-					month.each(function () {
-						var thisEl = $(this),
-							item = thisEl.find('li'),
-							act = thisEl.find('.is-active'),
-							actPrev = act.prev();
-						act.removeClass('is-active');
-						if (actPrev.length) {
-							actPrev.addClass('is-active');
-						}
-						else {
-							item.last().addClass('is-active');
-						}
-					});
-				};
-			}
-			else {
-				btnPrev.addClass('is-disabled');
-			}
+			// move
+			moveTo(timePrev);
 			return false;
 		});
-		// 
+		// preview item click
 		previewItem.on('click', function () {
-			var thisEl = $(this),
-				attr = $(this).data('day');
-				attrEl = $('.' + attr),
-				attrIndex = attrEl.index(),
-				commonCounter = attrEl.prevAll().length,
-				previewItemCounter = thisEl.prevAll().length;
-			previewItem.removeClass('is-active');
-			thisEl.addClass('is-active');
-
-			previewItem.removeClass('is-prev');
-			attrEl.prevAll().addClass('is-prev');
-
-			timeDay.removeClass('is-active');
-			timeDay.eq(attrIndex).addClass('is-active');
-
-			eventsItem.removeClass('is-active');
-			eventsItem.eq(attrIndex).addClass('is-active');
-
-			if (thisEl.hasClass('is-prev')) {
-				preview.css('transform', 'translate3d('+ previewItemCounter*previewWidth +'px,0,0)');
-				// 
-				timeList.css('transform', 'translate3d('+ commonCounter*timeWidth +'px,0,0)');
-				// events
-				events.css('transform', 'translate3d('+ commonCounter*eventsWidth +'px,0,0)');
-			}
-			else {
-				preview.css('transform', 'translate3d('+ -previewItemCounter*previewWidth +'px,0,0)');
-				// 
-				timeList.css('transform', 'translate3d('+ -commonCounter*timeWidth +'px,0,0)');
-				// events
-				events.css('transform', 'translate3d('+ -commonCounter*eventsWidth +'px,0,0)');
-			};
+			var dataTime = $(this).data('time'),
+				elTime = $('.' + dataTime);
+			// move
+			moveTo(elTime);
+		});
+		// month item click
+		monthItem.on('click', function () {
+			var dataTime = $(this).data('time'),
+				elTime = $('.' + dataTime);
+			// move
+			moveTo(elTime);
 			return false;
 		});
-		// 
-		monthItem.on('click', function () {
-			var thisEl = $(this),
-				attr = thisEl.data('day'),
-				attrEl = $('.' + attr),
-				attrIndex = attrEl.index(),
-				commonCounter = attrEl.prevAll().length;
-
-			timeDay.removeClass('is-active');
-			timeDay.eq(attrIndex).addClass('is-active');
-
-			eventsItem.removeClass('is-active');
-			eventsItem.eq(attrIndex).addClass('is-active');
-
-			if (thisEl.parent().hasClass('is-prev')) {
-				// 
-				timeList.css('transform', 'translate3d('+ commonCounter*timeWidth +'px,0,0)');
-				// events
-				events.css('transform', 'translate3d('+ commonCounter*eventsWidth +'px,0,0)');
-				// 
-				month.each(function () {
-					var thisEl = $(this),
-						item = thisEl.find('li'),
-						act = thisEl.find('.is-active'),
-						actPrev = act.prev();
-					act.removeClass('is-active');
-					if (actPrev.length) {
-						actPrev.addClass('is-active');
-					}
-					else {
-						item.last().addClass('is-active');
-					}
-				});
-				// 
-				if (attrEl.hasClass('is-interview')) {
-					
-				};
-			}
-			else {
-				// 
-				timeList.css('transform', 'translate3d('+ -commonCounter*timeWidth +'px,0,0)');
-				// events
-				events.css('transform', 'translate3d('+ -commonCounter*eventsWidth +'px,0,0)');
-				// 
-				month.each(function () {
-					var thisEl = $(this),
-						item = thisEl.find('li'),
-						act = thisEl.find('.is-active'),
-						actNext = act.next();
-					act.removeClass('is-active');
-					if (actNext.length) {
-						actNext.addClass('is-active');
-					}
-					else {
-						item.first().addClass('is-active');
-					}
-				});
-			};
-		});
-		// 
+		// toggle container items
 		fullMonth.on('click', function () {
 			container.addClass('is-upper-show');
+			var dataTime = $(this).data('time'),
+				elTime = $('.' + dataTime);
+			// move
+			moveTo(elTime);
 			return false;
 		});
 		scale.on('click', function () {
@@ -245,7 +137,7 @@ head.ready(function() {
 		    else{
 		        //scroll down
 		        letsgo.trigger('click');
-		    }   
+		    };
 		});
 	}());
 	
@@ -266,5 +158,5 @@ head.ready(function() {
 			getcurrent();
 		});
 		getcurrent();
-	}
+	};
 });
