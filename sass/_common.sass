@@ -260,6 +260,8 @@ a
 			+scale(5)
 		.full
 			top: 33%
+		.full__day
+			width: 19px
 		.list
 			border-width: 0
 		.list__in
@@ -731,12 +733,14 @@ a
 	+tr(top .4s)
 	+vertical 
 	.full__in
-		display: inline-block
-		width: 100%
+		position: absolute
+		top: 50%
+		left: 50%
 		height: 107px
 		padding-top: 34px
 		white-space: nowrap
 		vertical-align: middle
+		+transform(translateX(-50%) translateY(-50%))
 	.full__month,
 	.full__day
 		position: relative
@@ -745,6 +749,7 @@ a
 	.full__day
 		width: 9px
 		height: 52px
+		+tr(width .4s .3s)
 		&:before,
 		&:after
 			content: ""
