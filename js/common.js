@@ -129,9 +129,9 @@ head.ready(function() {
 
 	// letsgo
 	(function () {
-		var letsgo = $('.js-letsgo'),
-			wh = $(window).height();
+		var letsgo = $('.js-letsgo');
 		letsgo.on('click', function () {
+			var wh = $(window).height();
 			$('body').animate({
 				scrollTop: wh
 			}, 700);
