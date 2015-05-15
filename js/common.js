@@ -24,6 +24,7 @@ head.ready(function() {
 		// move
 		function moveTo (el) {
 			var index = el.index(),
+				elLength = timeItem.length,
 				dataPreview = el.data('preview'),
 				dataMonth = el.data('month');
 			if (index == 0) {
@@ -31,6 +32,12 @@ head.ready(function() {
 			}
 			else {
 				btnPrev.removeClass('is-disabled');
+			}
+			if (index == (elLength - 1)) {
+				btnNext.addClass('is-disabled');
+			}
+			else {
+				btnNext.removeClass('is-disabled');
 			}
 			// month
 			month.each(function () {
