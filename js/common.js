@@ -106,10 +106,14 @@ head.ready(function() {
 		});
 		// preview item click
 		previewItem.on('click', function () {
+			if ($(this).hasClass('is-active')) {
+				return true;
+			};
 			var dataTime = $(this).data('time'),
 				elTime = $('.' + dataTime);
 			// move
 			moveTo(elTime);
+			return false;
 		});
 		// month item click
 		monthItem.on('click', function () {
