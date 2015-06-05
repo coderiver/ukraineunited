@@ -39,7 +39,7 @@ a { text-decoration: none; }
 
 .column { float: left; width: 50%; }
 .column.column_article { position: relative; z-index: 4; }
-.column.column_article.is-article-moved .article { -webkit-transform: translateX(-100%); -moz-transform: translateX(-100%); -ms-transform: translateX(-100%); -o-transform: translateX(-100%); transform: translateX(-100%); }
+.column.column_article.is-article-moved .article { -webkit-transform: translateX(-90%); -moz-transform: translateX(-90%); -ms-transform: translateX(-90%); -o-transform: translateX(-90%); transform: translateX(-90%); }
 @media only screen and (max-width: 800px) { .column { width: auto; float: none; } }
 
 .center { max-width: 1400px; margin: 0 auto; }
