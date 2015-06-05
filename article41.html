@@ -14,11 +14,6 @@
 		<!-- lang -->
 		<div class="lang">
 			<div class="lang__head">eng</div>
-			<div class="lang__list">
-				<a href="#">ukr</a>
-				<a class="is-active" href="#">eng</a>
-				<a href="#">rus</a>
-			</div>
 		</div>
 		<div class="search">
 			<button class="search__btn">
@@ -26,30 +21,36 @@
 			</button>
 		</div>
 		<!-- menu -->
-		<a class="menu" href="index.html">
+		<button class="menu">
 			<span>scale</span>
 			<i class="icon icon-menu"></i>
-		</a>
-		<a class="header__link" href="about.html">about project</a>
-		<a class="header__logo" href="index.html">
+		</button>
+		<a class="header__link" href="">about project</a>
+		<a class="header__logo" href="#">
 			<img src="img/logo.svg" width="130" alt="">
 		</a>
 	</header>
 	<!-- l -->
-	<div class="l l_article">
-		<!-- slider -->
-		<div class="slider cycle-slideshow" 
-		    data-cycle-timeout="0"
-		    data-cycle-slides="> div">
-			<div class="slider__item" style="
-			background-image: url(img/pic4.jpg);"></div>
+	<div class="center l articlewrapper" >
+		<div class="column">
+			<!-- pic -->
+			<div class="articlepics cycle-slideshow" 
+			    data-cycle-timeout="0"
+			    data-cycle-slides="> div">
+				<div class="articlepic" style="
+				background-image: url(http://placehold.it/800x800);"></div>
+				<div class="articlepic" style="
+				background-image: url(http://placehold.it/900x900);"></div>
+				<div class="articlepic" style="
+				background-image: url(http://placehold.it/960x960);"></div>
+			</div>
 		</div>
-		<div class="column column_article">
+		<div class="column">
 			<!-- article -->
 			<div class="article js-article">
-				<a class="article__close" href="index.html">
+				<button class="article__close">
 					<i class="icon icon-close"></i>
-				</a>
+				</button>
 				<div class="article__info">
 					<div class="article__title">Олег Губар</div>
 					<div class="article__place">м. Одеса, Історик міста Одеса</div>
@@ -84,6 +85,7 @@
 				</div>
 			</div>
 		</div>
+		
 	</div>
 </div>
 <!-- load scripts -->

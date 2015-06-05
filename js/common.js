@@ -180,21 +180,23 @@ head.ready(function() {
 				sl = $('.cycle-slideshow'),
 				wh = $(window).height(),
 				st = $(window).scrollTop(),
-				colArticle = $('.js-column-article'),
+				article = $('.js-article'),
 				space = bh - wh,
 				step = space/num,
 				stepsdone = (st - 10)/step;
 			slidetoshow = Math.abs(parseInt(stepsdone));
 			sl.cycle('goto', slidetoshow);
 			sl.hover(function () {
-				var ww = $(window).width();
-				if (ww > 800) {
-					colArticle.addClass('is-article-moved');
+				var wndH = $(window).height(),
+					wndW = $(window).width(),
+					move = wndW/2 - wndW + wndH;
+				if (wndW > 800) {
+					article.css('transform', 'translateX(' + -move + 'px)');
 				};
 			}, function () {
-				var ww = $(window).width();
-				if (ww > 800) {
-					colArticle.removeClass('is-article-moved');
+				var wndW = $(window).width();
+				if (wndW > 800) {
+					article.css('transform', 'translateX(0px)');
 				};
 			});
 		}

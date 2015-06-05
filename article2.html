@@ -14,6 +14,11 @@
 		<!-- lang -->
 		<div class="lang">
 			<div class="lang__head">eng</div>
+			<div class="lang__list">
+				<a href="#">ukr</a>
+				<a class="is-active" href="#">eng</a>
+				<a href="#">rus</a>
+			</div>
 		</div>
 		<div class="search">
 			<button class="search__btn">
@@ -21,36 +26,30 @@
 			</button>
 		</div>
 		<!-- menu -->
-		<button class="menu">
+		<a class="menu" href="index.html">
 			<span>scale</span>
 			<i class="icon icon-menu"></i>
-		</button>
-		<a class="header__link" href="">about project</a>
-		<a class="header__logo" href="#">
+		</a>
+		<a class="header__link" href="about.html">about project</a>
+		<a class="header__logo" href="index.html">
 			<img src="img/logo.svg" width="130" alt="">
 		</a>
 	</header>
 	<!-- l -->
-	<div class="center l articlewrapper" >
-		<div class="column">
-			<!-- pic -->
-			<div class="articlepics cycle-slideshow" 
-			    data-cycle-timeout="0"
-			    data-cycle-slides="> div">
-				<div class="articlepic" style="
-				background-image: url(http://placehold.it/800x800);"></div>
-				<div class="articlepic" style="
-				background-image: url(http://placehold.it/900x900);"></div>
-				<div class="articlepic" style="
-				background-image: url(http://placehold.it/960x960);"></div>
-			</div>
+	<div class="l l_article">
+		<!-- slider -->
+		<div class="slider cycle-slideshow" 
+		    data-cycle-timeout="0"
+		    data-cycle-slides="> div">
+			<div class="slider__item" style="
+			background-image: url(img/pic2.jpg);"></div>
 		</div>
-		<div class="column">
+		<div class="column column_article">
 			<!-- article -->
-			<div class="article">
-				<button class="article__close">
+			<div class="article js-article">
+				<a class="article__close" href="index.html">
 					<i class="icon icon-close"></i>
-				</button>
+				</a>
 				<div class="article__info">
 					<div class="article__title">Аріна Кольцова</div>
 					<div class="article__place">м. Київ, Гoлoва "Самооборони" Солом'янського району м. Києва</div>
@@ -113,7 +112,6 @@
 				</div>
 			</div>
 		</div>
-		
 	</div>
 </div>
 <!-- load scripts -->
