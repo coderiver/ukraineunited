@@ -190,12 +190,16 @@ head.ready(function() {
 				var wndH = $(window).height(),
 					wndW = $(window).width(),
 					move = wndW/2 - wndW + wndH;
-				if (wndW > 800) {
+				if (wndW > 800 && move > 200) {
+					article.addClass('is-moved');
 					article.css('transform', 'translateX(' + -move + 'px)');
 				};
 			}, function () {
-				var wndW = $(window).width();
-				if (wndW > 800) {
+				var wndH = $(window).height(),
+					wndW = $(window).width(),
+					move = wndW/2 - wndW + wndH;
+				if (wndW > 800 && move > 200) {
+					article.removeClass('is-moved');
 					article.css('transform', 'translateX(0px)');
 				};
 			});
