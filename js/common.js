@@ -1,4 +1,25 @@
 head.ready(function() {
+	if (localStorage.getItem("lang") === null) {
+	 localStorage["lang"] = 'en';
+	}
+	else{
+		$active = $('.lang__list a[data-lang='+localStorage["lang"]+']');
+		$('.lang a').removeClass('is-active');
+		$active.addClass('is-active')
+		$('.lang__head').text($active.text());
+		$('body').removeClass('eng rus ukr').addClass(localStorage["lang"]);
+	}
+	
+	// var foo = localStorage["bar"];
+// ...
+// localStorage["bar"] = foo;
+	$('.lang__list a').click(function(event) {
+		$(this).siblings().removeClass('is-active');
+		$(this).addClass('is-active');
+		$('.lang__head').text($(this).text());
+		localStorage["lang"] = $(this).data('lang');
+		$('body').removeClass('eng rus ukr').addClass(localStorage["lang"]);
+	});
 
 	// main page
 	(function () {
