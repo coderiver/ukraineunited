@@ -1,6 +1,6 @@
 head.ready(function() {
 	if (localStorage.getItem("lang") === null) {
-	 localStorage["lang"] = 'en';
+		localStorage["lang"] = 'en';
 	}
 	else{
 		$active = $('.lang__list a[data-lang='+localStorage["lang"]+']');
@@ -19,6 +19,7 @@ head.ready(function() {
 		$('.lang__head').text($(this).text());
 		localStorage["lang"] = $(this).data('lang');
 		$('body').removeClass('eng rus ukr').addClass(localStorage["lang"]);
+		return false;
 	});
 
 	// main page
