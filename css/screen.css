@@ -215,7 +215,7 @@ a { text-decoration: none; }
 
 .full { position: absolute; top: 236px; left: 0; right: 0; bottom: 274px; -webkit-transition: top 0.4s; -moz-transition: top 0.4s; -o-transition: top 0.4s; transition: top 0.4s; text-align: center; font-size: 0; }
 .full:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
-.full .full__in { position: absolute; top: 50%; left: 50%; height: 107px; padding-top: 34px; white-space: nowrap; vertical-align: middle; -webkit-transform: translateX(-50%) translateY(-50%); -moz-transform: translateX(-50%) translateY(-50%); -ms-transform: translateX(-50%) translateY(-50%); -o-transform: translateX(-50%) translateY(-50%); transform: translateX(-50%) translateY(-50%); }
+.full .full__in { position: absolute; top: 50%; left: 0; height: 107px; padding-top: 34px; white-space: nowrap; vertical-align: middle; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); }
 .full .full__month, .full .full__day { position: relative; display: inline-block; vertical-align: top; }
 .full .full__day { width: 9px; height: 52px; -webkit-transition: width 0.4s; -webkit-transition-delay: 0.3s; -moz-transition: width 0.4s 0.3s; -o-transition: width 0.4s 0.3s; transition: width 0.4s 0.3s; }
 .full .full__day:before, .full .full__day:after { content: ""; position: absolute; top: 0; left: 4px; width: 1px; height: 4px; background: #cccccc; }
