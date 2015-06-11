@@ -149,9 +149,9 @@
 			<div class="lang">
 				<div class="lang__head">eng</div>
 				<div class="lang__list">
-					<a href="#">ukr</a>
-					<a class="is-active" href="#">eng</a>
-					<a href="#">rus</a>
+					<a href="#" data-lang="ukr">ukr</a>
+					<a class="is-active" data-lang="eng" href="#">eng</a>
+					<a data-lang="rus" href="#">rus</a>
 				</div>
 			</div>
 			<div class="search">
@@ -160,13 +160,19 @@
 				</button>
 			</div>
 			<!-- menu -->
-			<a class="menu js-scale">
-				<span>scale</span>
+			<a class="menu">
+				<b>
+					<span class="en">Scale</span>
+					<span class="uk">Масштаб</span>
+					<span class="ru">Масштаб</span>
+				</b>
 				<i class="icon icon-menu"></i>
 			</a>
-			<a class="header__link" href="about.html">about project</a>
-			<a class="header__logo" href="index.html">
-				<img src="img/logo.svg" width="130" alt="">
+			<a class="header__link" href="about.html"><span class="en">about project</span><span class="ru">О проекте</span><span class="uk">Про проект</span></a>
+			<a class="header__logo" href="index.html#timeline">
+				<span class="en"><img src="img/logo.svg" width="130" alt=""></span>
+				<span class="ru"><img src="img/logo-ru.svg" width="130" alt=""></span>
+				<span class="uk"><img src="img/logo-uk.svg" width="130" alt=""></span>
 			</a>
 		</header>
 		<!-- container -->
@@ -613,6 +619,16 @@
 					<div class="preview__in js-preview">
 						<!-- februar month -->
 						<a class="preview__item js-preview-item p080214 is-active" data-time="t080214" href="article.html">
+							<div class="preview__info">
+								<div class="preview__man">Дмитро Ярош</div>
+								<div class="preview__place">Лідер української праворадикальної організації "Правий Сектор"</div>
+							</div>
+							<div class="preview__pic">
+								<img src="img/pic3-328x328.jpg" alt="">
+							</div>
+						</a>
+						<!-- april month -->
+						<a class="preview__item js-preview-item p010414 is-active" data-time="t010414" href="article5.html">
 							<div class="preview__info">
 								<div class="preview__man">Дмитро Ярош</div>
 								<div class="preview__place">Лідер української праворадикальної організації "Правий Сектор"</div>

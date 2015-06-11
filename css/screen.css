@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,800&subset=cyrillic,latin);
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; vertical-align: baseline; }
 
 body, html { height: 100%; }
@@ -77,8 +76,8 @@ a { text-decoration: none; }
 .lang .lang__list a.is-active, .lang .lang__list a:hover { background: #3e3e3e; color: white; }
 
 .menu { float: right; height: 50px; padding: 0 10px; -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -o-transition: all 0.2s; transition: all 0.2s; font-size: 0; color: #646464; }
-.menu span, .menu .icon { display: inline-block; vertical-align: middle; }
-.menu span { font-size: 12px; font-weight: 700; text-transform: uppercase; line-height: 50px; }
+.menu b, .menu .icon { display: inline-block; vertical-align: middle; font-weight: normal; }
+.menu b { font-size: 12px; font-weight: 700; text-transform: uppercase; line-height: 50px; }
 .menu .icon { margin-left: 10px; font-size: 10px; }
 .menu:hover { background: #3e3e3e; color: white; }
 
@@ -225,3 +224,19 @@ a { text-decoration: none; }
 .full .full__title a { display: inline-block; padding: 0 10px; border: 1px solid transparent; text-transform: uppercase; font-size: 10px; vertical-align: top; line-height: 16px; color: black; -webkit-transition: border 0.2s; -moz-transition: border 0.2s; -o-transition: border 0.2s; transition: border 0.2s; }
 .full .full__title a:hover { border-color: black; }
 .full .full__pic { position: absolute; top: -34px; left: -46px; width: 101px; text-align: center; font-size: 0; }
+
+.en, .ru, .uk { display: none; }
+
+.eng .en { display: block; }
+
+.eng span.en, .eng b.en { display: inline; }
+
+.rus .ru { display: block; }
+
+.rus span.ru, .rus b.ru { display: inline; }
+
+.ukr .uk { display: block; }
+
+.ukr span.uk, .ukr b.uk { display: inline; }
+
+b.ru, b.en, b.uk { font-weight: normal; }

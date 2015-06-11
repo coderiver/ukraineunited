@@ -46,7 +46,9 @@
 // 	+png(blabla)
 // p
 // 	+jpg(bla)
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,800&subset=cyrillic,latin)
+
+
+// @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,800&subset=cyrillic,latin)
 
 body
 	min-height: 768px
@@ -241,11 +243,12 @@ a
 	+tr(all .2s)
 	font-size: 0
 	color: #646464 
-	span,
+	b,
 	.icon
 		display: inline-block
 		vertical-align: middle
-	span
+		font-weight: normal
+	b
 		font-size: 12px
 		font-weight: 700 
 		text-transform: uppercase
@@ -849,9 +852,25 @@ a
 		font-size: 0
 		
 
+.en,.ru,.uk
+	display: none
+.eng .en
+	display: block
+.eng span.en,.eng b.en
+	display: inline
+	
+.rus .ru
+	display: block
+.rus span.ru,.rus b.ru
+	display: inline
+	
+.ukr .uk
+	display: block
+.ukr span.uk,.ukr b.uk
+	display: inline
 
-
-
+b.ru,b.en,b.uk
+	font-weight: normal
 
 
 
