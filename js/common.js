@@ -212,7 +212,7 @@ head.ready(function() {
 				var wndH = $(window).height(),
 					wndW = $(window).width(),
 					move = wndW/2 - wndW + wndH;
-				if (wndW > 800 && move > 200) {
+				if (wndW > 800 && move > 20) {
 					article.addClass('is-moved');
 					article.css('transform', 'translateX(' + -move + 'px)');
 				};
@@ -220,7 +220,7 @@ head.ready(function() {
 				var wndH = $(window).height(),
 					wndW = $(window).width(),
 					move = wndW/2 - wndW + wndH;
-				if (wndW > 800 && move > 200) {
+				if (wndW > 800 && move > 20) {
 					article.removeClass('is-moved');
 					article.css('transform', 'translateX(0px)');
 				};
