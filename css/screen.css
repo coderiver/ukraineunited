@@ -199,6 +199,7 @@ a { text-decoration: none; }
 .cities label input { position: absolute; top: 0; left: 0; opacity: 0; visibility: hidden; }
 .cities label input:checked + span { border-color: #6e6e6e; }
 .cities label span { display: block; padding: 2px 9px; border: 1px solid transparent; color: #6e6e6e; font-size: 12px; text-transform: uppercase; -webkit-transition: border 0.2s; -moz-transition: border 0.2s; -o-transition: border 0.2s; transition: border 0.2s; }
+.cities label span b { font-weight: normal; }
 
 .text { position: relative; height: 150px; -webkit-transition: -webkit-transform 0.4s; -webkit-transition-delay: 0.3s; -moz-transition: -moz-transform 0.4s 0.3s; -o-transition: -o-transform 0.4s 0.3s; transition: transform 0.4s 0.3s; }
 .text .text__list { position: absolute; top: 0; left: 50%; -webkit-transform: translateX(-50%); -moz-transform: translateX(-50%); -ms-transform: translateX(-50%); -o-transform: translateX(-50%); transform: translateX(-50%); white-space: nowrap; font-size: 0; }

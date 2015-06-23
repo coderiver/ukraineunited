@@ -1,4 +1,42 @@
 head.ready(function() {
+	//begin navigation of all pages
+	uberarray = [
+		'article1.html',
+		'article2.html',
+		'article3.html',
+		'article4.html',
+		'article5.html',
+		'article.html?1',
+		'article.html?2',
+		'article.html?3',
+		'article.html?4'
+	];
+	$next = $('.article__next');
+	$prev = $('.article__prev');
+	bla = window.location.href.split('/');
+	asd = bla[bla.length - 1];
+	current = uberarray.indexOf(asd);
+	console.log(current);
+	if(current==0){
+		$prev.hide();
+	}
+	if(current==uberarray.length-1){
+		$next.hide();
+	}
+	$prev.click(function(event) {
+		window.location = uberarray[current-1];
+		return false;
+	});
+	$next.click(function(event) {
+		window.location = uberarray[current+1];
+		return false;
+	});
+	/// end of navigation
+
+
+
+
+
 	if (localStorage.getItem("lang") === null) {
 		localStorage["lang"] = 'en';
 	}
@@ -9,6 +47,8 @@ head.ready(function() {
 		$('.lang__head').text($active.text());
 		$('body').removeClass('eng rus ukr').addClass(localStorage["lang"]);
 	}
+
+	
 	
 	// var foo = localStorage["bar"];
 // ...
