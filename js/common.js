@@ -36,7 +36,7 @@ head.ready(function() {
 
 
 
-
+	// begin multilanguage
 	if (localStorage.getItem("lang") === null) {
 		localStorage["lang"] = 'en';
 	}
@@ -47,12 +47,6 @@ head.ready(function() {
 		$('.lang__head').text($active.text());
 		$('body').removeClass('eng rus ukr').addClass(localStorage["lang"]);
 	}
-
-	
-	
-	// var foo = localStorage["bar"];
-// ...
-// localStorage["bar"] = foo;
 	$('.lang__list a').click(function(event) {
 		$(this).siblings().removeClass('is-active');
 		$(this).addClass('is-active');
@@ -61,6 +55,7 @@ head.ready(function() {
 		$('body').removeClass('eng rus ukr').addClass(localStorage["lang"]);
 		return false;
 	});
+	// end of multilanguage
 
 	// main page
 	(function () {
@@ -248,7 +243,7 @@ head.ready(function() {
 				stepsdone = (st - 10)/step;
 			slidetoshow = Math.abs(parseInt(stepsdone));
 			sl.cycle('goto', slidetoshow);
-			sl.hover(function () {
+			sl.hoverIntent(function () {
 				var wndH = $(window).height(),
 					wndW = $(window).width(),
 					move = wndW/2 - wndW + wndH;
