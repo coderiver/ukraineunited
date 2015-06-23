@@ -46,7 +46,8 @@ a { text-decoration: none; }
 .main .main__top { position: relative; height: 50vh; overflow: hidden; z-index: 2; }
 .main .main__top:after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(82, 82, 82, 0.75); }
 .main .main__pictures { position: absolute; left: -100px; right: -100px; bottom: 0; }
-.main .main__list { white-space: nowrap; font-size: 0; text-align: center; }
+.main .main__list { white-space: nowrap; font-size: 0; text-align: center; background: black; position: relative; margin-top: -1px; }
+.main .main__list img { vertical-align: top; }
 .main .main__in { position: relative; height: 50vh; z-index: 4; }
 .main .main__in .center { position: relative; top: -73px; }
 .main .main__logo { margin-bottom: 25px; font-size: 0; text-align: center; }
