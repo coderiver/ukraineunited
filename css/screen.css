@@ -76,7 +76,7 @@ a { text-decoration: none; }
 .lang .lang__list a { display: block; padding: 10px; background: #333333; color: #646464; text-transform: uppercase; }
 .lang .lang__list a.is-active, .lang .lang__list a:hover { background: #3e3e3e; color: white; }
 
-.menu { float: right; height: 50px; padding: 0 10px; -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -o-transition: all 0.2s; transition: all 0.2s; font-size: 0; color: #646464; }
+.menu { float: right; height: 50px; padding: 0 10px; -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -o-transition: all 0.2s; transition: all 0.2s; font-size: 0; color: #646464; cursor: pointer; }
 .menu b, .menu .icon { display: inline-block; vertical-align: middle; font-weight: normal; }
 .menu b { font-size: 12px; font-weight: 700; text-transform: uppercase; line-height: 50px; }
 .menu .icon { margin-left: 10px; font-size: 10px; }
