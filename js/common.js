@@ -77,7 +77,13 @@ head.ready(function() {
 			monthItem = month.find('li'),
 			fullMonth = $('.js-full-month'),
 			container = $('.js-container'),
-			scale = $('.js-scale');
+			scale = $('.js-scale'),
+			init = $('.js-init'),
+			initTime = init.data('time'),
+			initTimeEl = $('.' + initTime),
+			body = $('body');
+			// move
+			moveTo(initTimeEl);
 		// move
 		function moveTo (el) {
 			var index = el.index(),
@@ -139,6 +145,7 @@ head.ready(function() {
 				preview.css('transform', 'translate3d('+ -indexPreview * previewWidth +'px,0,0)');
 			};
 		};
+		moveTo(initTimeEl);
 		// next button click
 		btnNext.on('click', function () {
 			if (!btnNext.hasClass('is-disabled')) {
@@ -171,6 +178,17 @@ head.ready(function() {
 		    	btnPrev.trigger('click');
 		    };
 		});
+		// mouse wheel
+		if (container.hasClass('is-upper-show')) {
+			body.on('mousewheel', function (event){
+				if(event.originalEvent.wheelDelta /120 > 0) {
+					btnPrev.trigger('click');
+				}
+				else{
+					btnNext.trigger('click');
+				}
+			});
+		};
 		// preview item click
 		previewItem.on('click', function () {
 			if ($(this).hasClass('is-active')) {
@@ -200,7 +218,7 @@ head.ready(function() {
 			return false;
 		});
 		scale.on('click', function () {
-			container.removeClass('is-upper-show');
+			container.toggleClass('is-upper-show');
 			return false;
 		});
 	}());
