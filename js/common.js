@@ -180,14 +180,14 @@ head.ready(function() {
 		});
 		// mouse wheel
 		if (container.hasClass('is-upper-show')) {
-			body.on('mousewheel', function (event){
+			body.on('mousewheel', throttle(function (event){
 				if(event.originalEvent.wheelDelta /120 > 0) {
 					btnPrev.trigger('click');
 				}
 				else{
 					btnNext.trigger('click');
 				}
-			});
+			}, 1300));
 		};
 		// preview item click
 		previewItem.on('click', function () {
@@ -222,7 +222,38 @@ head.ready(function() {
 			return false;
 		});
 	}());
+	function debounce(fn, delay) {
+	  var timer = null;
+	  return function () {
+	    var context = this, args = arguments;
+	    clearTimeout(timer);
+	    timer = setTimeout(function () {
+	      fn.apply(context, args);
+	    }, delay);
+	  };
+	}
+	function throttle(fn, threshhold, scope) {
+	  threshhold || (threshhold = 250);
+	  var last,
+	      deferTimer;
+	  return function () {
+	    var context = scope || this;
 
+	    var now = +new Date,
+	        args = arguments;
+	    if (last && now < last + threshhold) {
+	      // hold on to it
+	      clearTimeout(deferTimer);
+	      deferTimer = setTimeout(function () {
+	        last = now;
+	        fn.apply(context, args);
+	      }, threshhold);
+	    } else {
+	      last = now;
+	      fn.apply(context, args);
+	    }
+	  };
+	}
 	// letsgo
 	(function () {
 		var letsgo = $('.js-letsgo');
@@ -234,6 +265,7 @@ head.ready(function() {
 		});
 		var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
 		$(window).bind(mousewheelevt, function(e){
+			console.log('aa');
 		    var evt = window.event || e //equalize event object     
 		    evt = evt.originalEvent ? evt.originalEvent : evt; //convert to originalEvent if possible               
 		    var delta = evt.detail ? evt.detail*(-40) : evt.wheelDelta //check for detail first, because it is used by Opera and FF
