@@ -38,7 +38,7 @@ head.ready(function() {
 
 	// begin multilanguage
 	if (localStorage.getItem("lang") === null) {
-		localStorage["lang"] = 'en';
+		localStorage["lang"] = 'eng';
 	}
 	else{
 		$active = $('.lang__list a[data-lang='+localStorage["lang"]+']');
