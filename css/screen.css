@@ -98,7 +98,7 @@ a { text-decoration: none; }
 .container.is-upper-show .list__in { bottom: 0; }
 .container.is-upper-show .list__item { width: 164px; }
 .container.is-upper-show .time__list { -webkit-transition: -webkit-transform 0.3s; -moz-transition: -moz-transform 0.3s; -o-transition: -o-transform 0.3s; transition: transform 0.3s; }
-.container .container__under, .container .container__upper { height: calc(100vh - 50px); min-height: 718px; -webkit-transition: all 0.4s; -moz-transition: all 0.4s; -o-transition: all 0.4s; transition: all 0.4s; }
+.container .container__under, .container .container__upper { height: calc(100vh - 50px); min-height: 718px; min-height: 600px; -webkit-transition: all 0.4s; -moz-transition: all 0.4s; -o-transition: all 0.4s; transition: all 0.4s; }
 .container .container__upper { position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0; visibility: hidden; }
 
 .events { position: absolute; top: 0; left: 0; right: 0; height: 33%; padding-left: 50%; white-space: nowrap; font-size: 0; overflow: hidden; }
