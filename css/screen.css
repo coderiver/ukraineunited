@@ -184,6 +184,7 @@ a { text-decoration: none; }
 .article .article__title { margin-bottom: 10px; font-size: 24px; font-weight: 800; }
 .article .article__title + .article__content { margin-top: 30px; }
 .article .article__place { margin-bottom: 55px; font-size: 12px; text-transform: uppercase; }
+.article .article__place b { display: block; margin-bottom: 15px; font-weight: normal; padding-top: 4px; }
 @media only screen and (max-width: 800px) { .article .article__place { margin-bottom: 20px; } }
 .article .article__month { display: inline-block; margin: 0 0 55px -10px; padding: 0 10px; text-transform: uppercase; vertical-align: top; line-height: 18px; background: black; color: white; background: white; color: black; margin-left: 0; padding-left: 0; margin-bottom: 30px; margin-top: -20px; }
 .article .article__content { margin-bottom: 100px; font-size: 14px; line-height: 1.8; }
