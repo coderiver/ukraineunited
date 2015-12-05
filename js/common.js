@@ -221,6 +221,7 @@ head.ready(function() {
 			container.toggleClass('is-upper-show');
 			return false;
 		});
+		container.toggleClass('is-upper-show');
 	}());
 	function debounce(fn, delay) {
 	  var timer = null;
@@ -263,6 +264,11 @@ head.ready(function() {
 				scrollTop: wh
 			}, 700);
 		});
+		if(window.location.hash) {
+			letsgo.trigger('click');
+		  // Fragment exists
+		  // alert(window.location.hash)
+		}
 		var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
 		$(window).bind(mousewheelevt, function(e){
 			console.log('aa');
